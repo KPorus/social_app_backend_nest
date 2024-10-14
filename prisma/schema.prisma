@@ -24,10 +24,10 @@ model users {
   password   String
   createdAt  DateTime @default(now())
   updatedAt  DateTime @default(now()) @updatedAt
-  posts      Post[]
+  posts      posts[]
 }
 
-model Post {
+model posts {
   id        String   @id @default(uuid())
   title     String
   content   String
