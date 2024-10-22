@@ -19,6 +19,11 @@ COPY ./ ./
 # Install Prisma globally and generate the client
 RUN yarn global add prisma
 RUN npx prisma generate
+
+# # Define the database URL (replace with your actual database URL)
+# ARG DATABASE_URL
+# ENV DATABASE_URL=$DATABASE_URL
+
 RUN yarn prisma:m:d
 
 # Build the NestJS application
