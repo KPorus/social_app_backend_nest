@@ -1,8 +1,8 @@
 # Stage 1: Build the application
-FROM node:20-alpine as builder
+FROM node:20-alpine AS builder
 
 # Set the environment to build
-ENV NODE_ENV build
+ENV NODE_ENV=build
 
 # Set the working directory in the container
 WORKDIR /app
