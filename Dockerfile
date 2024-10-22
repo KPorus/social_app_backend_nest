@@ -28,7 +28,7 @@ RUN yarn build
 FROM node:20-alpine
 
 # Set the environment to production
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 # Set the working directory in the container
 WORKDIR /app
