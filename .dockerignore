@@ -1,0 +1,10 @@
+node_modules
+dist
+.env
+.eslintrc.js
+.prettierrc
+.git
+.gitignore
+yarn-debug.log
+yarn-error.log
+coverage
