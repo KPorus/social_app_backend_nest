@@ -19,10 +19,10 @@ COPY ./ ./
 # Install Prisma globally and generate the client
 RUN yarn global add prisma
 RUN npx prisma generate
+RUN yarn prisma:m:d
 
 # Build the NestJS application
 RUN yarn build
-
 
 # Stage 2: Run the application
 FROM node:20-alpine
@@ -40,4 +40,4 @@ COPY --from=builder /app/node_modules/ ./node_modules/
 COPY --from=builder /app/dist/ ./dist/
 
 # Set the command to run migrations and start the application
-CMD ["sh", "-c", "yarn prisma:m:d && yarn start:prod"]
+CMD [yarn start:prod]
