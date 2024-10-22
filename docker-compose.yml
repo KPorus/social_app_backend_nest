@@ -25,6 +25,15 @@ services:
     volumes:
       - test_postgres_data:/var/lib/postgresql/data # Separate volume for test-db
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - dev-db
+      - test-db
 volumes:
   dev_postgres_data: # Separate volume for dev-db
   test_postgres_data: # Separate volume for test-db
